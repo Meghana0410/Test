@@ -15,7 +15,7 @@ router
   .post(urlControllers.shorten)
 
 router
-  .route('/')
+  .route('/*')
   .get(urlControllers.getUrlData)
 
 module.exports = router;
