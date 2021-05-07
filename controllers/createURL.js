@@ -135,8 +135,8 @@ module.exports.getUrlData = function(req, res){
 
 				console.log("redirectCount", redirectCount)
 					var updateData = {
-						["redirectCount"] : redirectCount,
-						["lastSeenDate"]: moment().utc().format()
+						"redirectCount" : redirectCount,
+						"lastSeenDate": moment().utc().format()
 					};
 
 					console.log("updateData", updateData)
