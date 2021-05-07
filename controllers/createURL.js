@@ -76,13 +76,7 @@ module.exports.getUrlData = function(req, res){
 	var returnData = {};
 	console.log("coming inside in get", req.params['0'])
 
-	// var searchKey = (req.params['0']).toString();// str.includes("world");
-	// var finalStr = searchKey.replace('/','');
-	// console.log("finalStr",finalStr)
-	// //console.log("searchKey", JSON.stringify(searchKey))
-	// var findData = {
-	// 	'shortcode': finalStr
-	// }
+	
 	if(JSON.stringify(req.params['0']).search("/stats/") >= 0){
 		console.log("in stats----------------->",req.params['0'] )
 		var checkString = (req.params['0']).toString();
@@ -112,16 +106,13 @@ module.exports.getUrlData = function(req, res){
 			}
 		});
 	} else {
-		var searchKey = (req.params['0']).toString();// str.includes("world");
+		var searchKey = (req.params['0']).toString();
 		var finalStr = searchKey.replace('/','');
-		// console.log("finalStr",finalStr)
-		//console.log("searchKey", JSON.stringify(searchKey))
+		
 		var findData = {
 			'shortcode': finalStr
 		}
-	// createURLData.find(searchKey,function(err, data){
 		createURLData.find(findData,function(err, data){
-		// 	console.log("db err", JSON.stringify(err))
 		console.log("data-->", JSON.stringify(data))
 		if(err){
 			returnData.err = err;
